@@ -1,0 +1,42 @@
+[
+  {
+    "id": "t1",
+    "quote": "RaheDeen delivered our AW26 collection 6 days ahead of schedule with zero compliance issues. Their CPSIA documentation was the cleanest we've seen from any Bangladesh supplier.",
+    "author": "Sarah Lindqvist",
+    "title": "Head of Sourcing",
+    "company": "NordKids Retail Group",
+    "country": "Sweden",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "t2",
+    "quote": "The embroidery quality on our private label range exceeded samples. MOQ flexibility at 300 pieces per style made it viable for our boutique buyers.",
+    "author": "James O'Brien",
+    "title": "Buying Director",
+    "company": "Little Lane (UK)",
+    "country": "United Kingdom",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "t3",
+    "quote": "We switched from a Chinese supplier after two late shipments. RaheDeen's merchandising team gave us weekly production updates. First full season—zero surprises.",
+    "author": "Priya Mehta",
+    "title": "VP Merchandising",
+    "company": "Bloom & Thread",
+    "country": "USA",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "t4",
+    "quote": "OEKO-TEX certified organic cotton for our Scandinavian baby range. The finishing quality and hangtag execution were retail-ready without any rework.",
+    "author": "Lars Kjeldsen",
+    "title": "Founder",
+    "company": "Naturlig Born",
+    "country": "Denmark",
+    "rating": 5,
+    "featured": false
+  }
+]

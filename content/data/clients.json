@@ -1,0 +1,8 @@
+[
+  { "id": "c1", "name": "NordKids", "country": "SE", "market": "Scandinavia", "since": 2018 },
+  { "id": "c2", "name": "Little Lane", "country": "GB", "market": "UK Retail", "since": 2020 },
+  { "id": "c3", "name": "Bloom & Thread", "country": "US", "market": "USA DTC", "since": 2021 },
+  { "id": "c4", "name": "Naturlig Born", "country": "DK", "market": "Nordics Organic", "since": 2019 },
+  { "id": "c5", "name": "KidzWear EU", "country": "DE", "market": "EU Mass Market", "since": 2017 },
+  { "id": "c6", "name": "TinyTrends", "country": "AU", "market": "Australia", "since": 2022 }
+]

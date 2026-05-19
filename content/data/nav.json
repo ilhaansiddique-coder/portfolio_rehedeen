@@ -1,0 +1,45 @@
+{
+  "main": [
+    {
+      "label": "Capabilities",
+      "href": "/capabilities",
+      "children": [
+        { "label": "Cut & Sew", "href": "/capabilities/cut-and-sew", "description": "Precision cut-and-sew for woven and knit kids apparel" },
+        { "label": "Private Label / OEM", "href": "/capabilities/private-label-oem", "description": "Full private label from concept to retail-ready" },
+        { "label": "Embroidery", "href": "/capabilities/embroidery", "description": "Multi-head embroidery, up to 15 colours" },
+        { "label": "Printing", "href": "/capabilities/printing", "description": "Screen, sublimation & DTG printing" },
+        { "label": "Finishing", "href": "/capabilities/finishing", "description": "Washing, tagging, folding & pack-ready finishing" }
+      ]
+    },
+    {
+      "label": "Products",
+      "href": "/products",
+      "children": [
+        { "label": "Boys", "href": "/products/boys", "description": "Newborn to 14 years — T-shirts, joggers, outerwear, sets" },
+        { "label": "Girls", "href": "/products/girls", "description": "Newborn to 14 years — dresses, leggings, blouses, sets" },
+        { "label": "Infants", "href": "/products/infants", "description": "0–12 months, CPSIA-compliant, gots certified" },
+        { "label": "Toddlers", "href": "/products/toddlers", "description": "1–3 years, comfort-first, durable construction" }
+      ]
+    },
+    {
+      "label": "Case Studies",
+      "href": "/case-studies"
+    },
+    {
+      "label": "Process",
+      "href": "/process"
+    },
+    {
+      "label": "Compliance",
+      "href": "/compliance"
+    },
+    {
+      "label": "Insights",
+      "href": "/insights"
+    }
+  ],
+  "cta": {
+    "label": "Request a Quote",
+    "href": "/contact/rfq"
+  }
+}

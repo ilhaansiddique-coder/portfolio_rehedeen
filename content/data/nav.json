@@ -1,37 +1,39 @@
 {
   "main": [
     {
-      "label": "Capabilities",
-      "href": "/capabilities",
+      "label": "Friendship Store",
+      "href": "/friendship-store",
       "children": [
-        { "label": "Cut & Sew", "href": "/capabilities/cut-and-sew", "description": "Precision cut-and-sew for woven and knit kids apparel" },
-        { "label": "Private Label / OEM", "href": "/capabilities/private-label-oem", "description": "Full private label from concept to retail-ready" },
-        { "label": "Embroidery", "href": "/capabilities/embroidery", "description": "Multi-head embroidery, up to 15 colours" },
-        { "label": "Printing", "href": "/capabilities/printing", "description": "Screen, sublimation & DTG printing" },
-        { "label": "Finishing", "href": "/capabilities/finishing", "description": "Washing, tagging, folding & pack-ready finishing" }
+        { "label": "Program Overview", "href": "/friendship-store", "description": "What is the RAHEDEEN™ Friendship Store program?" },
+        { "label": "Packages & Pricing", "href": "/friendship-store#packages", "description": "Starting from ৳30,000 per year" },
+        { "label": "Partner Benefits", "href": "/friendship-store#benefits", "description": "Marketing, design & business support" },
+        { "label": "Find Our Stores", "href": "/store-finder", "description": "Locate RAHEDEEN™ Friendship Stores near you" },
+        { "label": "Apply Now", "href": "/apply", "description": "Start your partnership application today" }
       ]
     },
     {
       "label": "Products",
       "href": "/products",
       "children": [
-        { "label": "Boys", "href": "/products/boys", "description": "Newborn to 14 years — T-shirts, joggers, outerwear, sets" },
-        { "label": "Girls", "href": "/products/girls", "description": "Newborn to 14 years — dresses, leggings, blouses, sets" },
-        { "label": "Infants", "href": "/products/infants", "description": "0–12 months, CPSIA-compliant, gots certified" },
-        { "label": "Toddlers", "href": "/products/toddlers", "description": "1–3 years, comfort-first, durable construction" }
+        { "label": "Baby Collection", "href": "/products/infants", "description": "0–24 months · Rompers, sets, bodysuits" },
+        { "label": "Boys Collection", "href": "/products/boys", "description": "2–14 years · T-shirts, joggers, sets" },
+        { "label": "Girls Collection", "href": "/products/girls", "description": "2–14 years · Frocks, sets, tops" },
+        { "label": "Toddler Collection", "href": "/products/toddlers", "description": "1–3 years · Comfort-first playwear" }
       ]
     },
     {
-      "label": "Case Studies",
-      "href": "/case-studies"
+      "label": "About",
+      "href": "/about"
     },
     {
-      "label": "Process",
-      "href": "/process"
-    },
-    {
-      "label": "Compliance",
-      "href": "/compliance"
+      "label": "Manufacturing",
+      "href": "/capabilities",
+      "children": [
+        { "label": "Capabilities", "href": "/capabilities", "description": "Cut & sew, embroidery, printing, finishing" },
+        { "label": "Factory", "href": "/factory", "description": "Narayanganj production facility" },
+        { "label": "Process", "href": "/process", "description": "12–14 week production timeline" },
+        { "label": "Compliance", "href": "/compliance", "description": "CPSIA, OEKO-TEX, GOTS, BSTI" }
+      ]
     },
     {
       "label": "Insights",
@@ -39,7 +41,7 @@
     }
   ],
   "cta": {
-    "label": "Request a Quote",
-    "href": "/contact/rfq"
+    "label": "Become a Partner",
+    "href": "/apply"
   }
 }

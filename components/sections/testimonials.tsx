@@ -21,7 +21,7 @@ export function Testimonials() {
         <SectionHeader
           badge="Client Voices"
           title="What Buyers Say"
-          subtitle="From Nordic retail groups to US DTC brands — hear from the teams who trust RaheDeen every season."
+          subtitle="From US and Southeast Asia brands to BD retail buyers — hear from the teams who trust RaheDeen every season."
         />
 
         <div className="grid lg:grid-cols-3 gap-8">

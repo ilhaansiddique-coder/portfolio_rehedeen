@@ -22,6 +22,7 @@ interface SectionHeaderProps {
   title: string;
   subtitle?: string;
   align?: "left" | "center";
+  inverted?: boolean;
   className?: string;
 }
 
@@ -30,6 +31,7 @@ export function SectionHeader({
   title,
   subtitle,
   align = "center",
+  inverted = false,
   className,
 }: SectionHeaderProps) {
   return (
@@ -42,16 +44,27 @@ export function SectionHeader({
     >
       {badge && (
         <div className={cn("mb-4", align === "center" ? "flex justify-center" : "")}>
-          <Badge variant="default">{badge}</Badge>
+          <Badge
+            variant={inverted ? "outline" : "default"}
+            className={inverted ? "border-white/20 text-white/70 bg-white/8" : ""}
+          >
+            {badge}
+          </Badge>
         </div>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
+      <h2
+        className={cn(
+          "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight",
+          inverted ? "text-white" : "text-gray-900"
+        )}
+      >
         {title}
       </h2>
       {subtitle && (
         <p
           className={cn(
-            "mt-4 text-lg text-gray-500 leading-relaxed",
+            "mt-4 text-lg leading-relaxed",
+            inverted ? "text-brand-300" : "text-gray-500",
             align === "center" ? "max-w-2xl mx-auto" : "max-w-2xl"
           )}
         >

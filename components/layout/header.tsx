@@ -15,7 +15,8 @@ export function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll(); // init on mount
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -25,33 +26,59 @@ export function Header() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_1px_3px_0_rgb(0_0_0/0.08)] border-b border-gray-100"
+          ? "bg-white shadow-[0_2px_16px_0_rgb(0_0_0/0.10)] border-b border-gray-100"
           : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-brand-700 flex items-center justify-center shadow-brand/20 shadow-md group-hover:shadow-brand/40 transition-shadow">
-              <Package className="w-4.5 h-4.5 text-white" />
+          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+            <div
+              className={cn(
+                "w-8 h-8 rounded-lg flex items-center justify-center shadow-md transition-all",
+                scrolled
+                  ? "bg-brand-700 shadow-brand-700/20 group-hover:shadow-brand-700/40"
+                  : "bg-white/20 border border-white/30 group-hover:bg-white/30"
+              )}
+            >
+              <Package className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-bold tracking-tight text-gray-900">
-              Rahe<span className="text-brand-700">Deen</span>
+            <span
+              className={cn(
+                "text-lg font-bold tracking-tight transition-colors",
+                scrolled ? "text-gray-900" : "text-white"
+              )}
+            >
+              RAHE
+              <span
+                className={cn(
+                  "transition-colors",
+                  scrolled ? "text-brand-700" : "text-accent-400"
+                )}
+              >
+                DEEN
+              </span>
+              <span className={cn("text-xs align-super ml-0.5 transition-colors", scrolled ? "text-brand-500" : "text-accent-300")}>™</span>
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {(nav.main as NavItem[]).map((item) => (
               <div key={item.href} className="relative">
                 {item.children ? (
                   <button
                     className={cn(
-                      "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                      activeDropdown === item.label
-                        ? "text-brand-700 bg-brand-50"
-                        : "text-gray-700 hover:text-brand-700 hover:bg-gray-50"
+                      "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150",
+                      scrolled
+                        ? activeDropdown === item.label
+                          ? "text-brand-700 bg-brand-50"
+                          : "text-gray-700 hover:text-brand-700 hover:bg-gray-100"
+                        : activeDropdown === item.label
+                          ? "text-white bg-white/15"
+                          : "text-white/85 hover:text-white hover:bg-white/12"
                     )}
                     onMouseEnter={() => setActiveDropdown(item.label)}
                     onMouseLeave={() => setActiveDropdown(null)}
@@ -72,16 +99,21 @@ export function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    className={cn(
+                      "px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150",
+                      scrolled
+                        ? "text-gray-700 hover:text-brand-700 hover:bg-gray-100"
+                        : "text-white/85 hover:text-white hover:bg-white/12"
+                    )}
                   >
                     {item.label}
                   </Link>
                 )}
 
-                {/* Dropdown */}
+                {/* Dropdown — always white bg regardless of scroll state */}
                 {item.children && activeDropdown === item.label && (
                   <div
-                    className="absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-elevated border border-gray-100 py-2 z-10"
+                    className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-[0_8px_32px_-8px_rgb(0_0_0/0.18)] border border-gray-100 py-2 z-10"
                     onMouseEnter={() => setActiveDropdown(item.label)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
@@ -89,9 +121,9 @@ export function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="flex flex-col px-4 py-3 hover:bg-brand-50 rounded-xl mx-1 transition-colors group"
+                        className="flex flex-col px-4 py-3 hover:bg-brand-50 rounded-xl mx-1 transition-colors group/child"
                       >
-                        <span className="text-sm font-medium text-gray-900 group-hover:text-brand-700">
+                        <span className="text-sm font-medium text-gray-900 group-hover/child:text-brand-700">
                           {child.label}
                         </span>
                         {child.description && (
@@ -108,16 +140,26 @@ export function Header() {
           </nav>
 
           {/* CTA + Mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <Link
-              href="/contact/rfq"
-              className="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 bg-brand-700 hover:bg-brand-800 text-white text-sm font-semibold rounded-xl transition-colors shadow-brand/30 shadow-md hover:shadow-brand/50"
+              href="/apply"
+              className={cn(
+                "hidden lg:inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-150 shadow-md",
+                scrolled
+                  ? "bg-brand-700 hover:bg-brand-800 text-white shadow-brand-700/25 hover:shadow-brand-700/40"
+                  : "bg-accent-500 hover:bg-accent-600 text-white shadow-accent-500/30 hover:shadow-accent-500/50"
+              )}
             >
-              Request a Quote
+              Become a Partner
             </Link>
 
             <button
-              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+              className={cn(
+                "lg:hidden p-2 rounded-lg transition-colors",
+                scrolled
+                  ? "text-gray-700 hover:bg-gray-100"
+                  : "text-white hover:bg-white/15"
+              )}
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
@@ -127,9 +169,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — always solid white */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-elevated">
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-[0_8px_32px_-8px_rgb(0_0_0/0.12)]">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {(nav.main as NavItem[]).map((item) => (
               <div key={item.href}>
@@ -141,12 +183,12 @@ export function Header() {
                   {item.label}
                 </Link>
                 {item.children && (
-                  <div className="ml-4 mt-1 space-y-1">
+                  <div className="ml-4 mt-1 space-y-0.5">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-3 py-2.5 text-sm text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 text-sm text-gray-500 hover:text-brand-700 hover:bg-brand-50 rounded-lg transition-colors"
                         onClick={() => setOpen(false)}
                       >
                         {child.label}
@@ -156,13 +198,13 @@ export function Header() {
                 )}
               </div>
             ))}
-            <div className="pt-2 pb-1">
+            <div className="pt-3 pb-1 border-t border-gray-100 mt-2">
               <Link
-                href="/contact/rfq"
-                className="flex items-center justify-center w-full px-4 py-3 bg-brand-700 hover:bg-brand-800 text-white text-sm font-semibold rounded-xl transition-colors"
+                href="/apply"
+                className="flex items-center justify-center w-full px-4 py-3 bg-accent-500 hover:bg-accent-400 text-white text-sm font-semibold rounded-xl transition-colors"
                 onClick={() => setOpen(false)}
               >
-                Request a Quote
+                Become a Partner
               </Link>
             </div>
           </div>

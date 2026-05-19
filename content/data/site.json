@@ -1,10 +1,12 @@
 {
-  "name": "RaheDeen",
-  "tagline": "Kids Apparel. Engineered for Global Retail.",
-  "description": "Bangladesh's precision-focused children's garment manufacturer. OEM, private label, and cut-and-sew for brands shipping to EU, UK, USA, and Scandinavia.",
+  "name": "RAHEDEEN™",
+  "tagline": "Grow Your Kids Fashion Business with RAHEDEEN™",
+  "description": "Premium kids garment brand from Bangladesh. Join the RAHEDEEN™ Friendship Store program — brand supported partnership for retailers, boutiques, and online sellers.",
   "email": "info@rahedeen.com",
   "rfqEmail": "rfq@rahedeen.com",
-  "phone": "+880 2 1234 5678",
+  "partnerEmail": "partner@rahedeen.com",
+  "phone": "+880 1234-567890",
+  "whatsapp": "+8801234567890",
   "address": {
     "street": "Plot 12, BSCIC Industrial Area",
     "city": "Narayanganj",
@@ -12,11 +14,16 @@
     "zip": "1400"
   },
   "social": {
-    "linkedin": "https://linkedin.com/company/rahedeen",
-    "facebook": "https://facebook.com/rahedeen"
+    "facebook": "https://facebook.com/rahedeen",
+    "instagram": "https://instagram.com/rahedeen"
   },
   "founded": 2009,
   "employees": "500+",
   "annualCapacity": "6M+ pieces/year",
-  "exportMarkets": ["EU", "UK", "USA", "Scandinavia", "Southeast Asia"]
+  "partnerStores": "200+",
+  "exportMarkets": ["USA", "Canada", "Australia", "Southeast Asia", "Middle East"],
+  "friendship_store": {
+    "tagline": "Brand Supported Partnership — Not a Franchise",
+    "wholesale_discount_pct": 3
+  }
 }

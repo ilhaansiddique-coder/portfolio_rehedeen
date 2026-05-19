@@ -31,11 +31,11 @@ const CERTS = [
     iconColor: "text-emerald-600",
   },
   {
-    slug: "reach",
-    name: "EU REACH",
-    issuer: "European Chemicals Agency",
+    slug: "bsti",
+    name: "BSTI Conformity",
+    issuer: "Bangladesh Standards & Testing Institution",
     description:
-      "All EU-destined garments tested against REACH SVHC list. Azo dye-free, phthalate-free inks. SGS/Intertek certified.",
+      "All domestic-market garments comply with BSTI quality and labelling standards for BD retail and e-commerce distribution.",
     color: "bg-brand-50 border-brand-200 text-brand-700",
     iconColor: "text-brand-600",
   },

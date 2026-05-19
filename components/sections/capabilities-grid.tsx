@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Scissors, Tag, Printer, Package, Needle, ArrowRight } from "lucide-react";
+import { Scissors, Tag, Printer, Package, Star, ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 
@@ -23,7 +23,7 @@ const CAPABILITIES = [
     color: "accent",
   },
   {
-    icon: Needle as React.FC<React.SVGProps<SVGSVGElement>>,
+    icon: Star,
     title: "Embroidery",
     href: "/capabilities/embroidery",
     description:
@@ -36,7 +36,7 @@ const CAPABILITIES = [
     title: "Printing",
     href: "/capabilities/printing",
     description:
-      "Screen printing (8 colours), all-over sublimation, DTG for small runs. REACH-compliant water-based inks.",
+      "Screen printing (8 colours), all-over sublimation, DTG for small runs. water-based, phthalate-free inks.",
     tags: ["Screen", "Sublimation", "DTG"],
     color: "accent",
   },
@@ -132,11 +132,3 @@ export function CapabilitiesGrid() {
   );
 }
 
-// Needle is not in lucide — use a custom SVG
-function Needle(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path d="M12 2l1.5 6L20 12l-6 1.5L12 20l-1.5-6L4 12l6-1.5L12 2z" />
-    </svg>
-  );
-}
